@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "pm-skills",
+  "version": "1.0.1",
+  "description": "FRD authoring and review skills for PMs at mvlchain.",
+  "owner": {
+    "name": "mvlchain",
+    "email": "dev@mvlchain.io",
+    "url": "https://github.com/easi6/claude-skill-set"
+  },
+  "plugins": [
+    {
+      "name": "pm-execution",
+      "description": "FRD authoring (/write-frd) and multi-role FRD review (/review-frd) for the mvlchain PM workflow.",
+      "source": "./pm-execution",
+      "category": "product-management"
+    }
+  ]
+}

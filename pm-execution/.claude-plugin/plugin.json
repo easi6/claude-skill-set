@@ -1,0 +1,18 @@
+{
+  "name": "pm-execution",
+  "version": "1.0.1",
+  "description": "FRD authoring and review for the mvlchain PM workflow: /write-frd drives an interview-driven draft against the mvlchain 9-section FRD template; /review-frd runs a multi-role (Developer/QA/Designer) review.",
+  "author": {
+    "name": "mvlchain",
+    "email": "dev@mvlchain.io",
+    "url": "https://github.com/easi6/claude-skill-set"
+  },
+  "keywords": [
+    "product-management",
+    "frd",
+    "requirements",
+    "review"
+  ],
+  "homepage": "https://github.com/easi6/claude-skill-set",
+  "license": "MIT"
+}
