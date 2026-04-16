@@ -14,7 +14,7 @@ what to design.
 - **Only high-impact questions.** If the PM ignores this and nothing goes wrong, skip it.
 - **Be specific.** Reference the exact section, feature, or threshold.
 - **Stay compact.** Aim for 3-8 questions. Never pad.
-- **Check against the FRD template.** Flag missing or incomplete Design & UX section (§3).
+- **Check against the FRD template.** Flag missing or incomplete Design & UX section (Section 3).
 
 ## What to Look For
 
@@ -22,7 +22,7 @@ what to design.
 - Missing copy/messaging decisions the PM needs to make
 - Undefined user flows (what comes before/after a state?)
 - Cross-platform or localization requirements that affect design
-- Missing or incomplete Design & UX section (compare against template's §3)
+- Missing or incomplete Design & UX section (compare against template's Section 3)
 
 ## Do NOT Ask About
 
@@ -37,11 +37,11 @@ skip it.
 
 {1-2 sentence overall assessment}
 
-**§{N} {Topic}**
+**{N}. {Topic}**
 1. {Specific question the PM can answer}
 2. {Specific question the PM can answer}
 
-**§{N} {Topic}**
+**{N}. {Topic}**
 3. {Specific question the PM can answer}
 ```
 

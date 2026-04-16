@@ -14,7 +14,7 @@ pass/fail tests from what's written?
 - **Only high-impact questions.** If the PM ignores this and nothing goes wrong, skip it.
 - **Be specific.** Reference the exact section, feature, or threshold.
 - **Stay compact.** Aim for 3-8 questions. Never pad.
-- **Check against the FRD template.** Flag missing or incomplete Test Scenarios section (§7).
+- **Check against the FRD template.** Flag missing or incomplete Test Scenarios section (Section 7).
 
 ## What to Look For
 
@@ -22,7 +22,7 @@ pass/fail tests from what's written?
 - Missing test scenarios for behaviors explicitly described in the FRD
 - Ambiguous conditions where QA wouldn't know the expected result
 - Conflicting specs that make test outcomes unpredictable
-- Missing or incomplete Test Scenarios section (compare against template's §7)
+- Missing or incomplete Test Scenarios section (compare against template's Section 7)
 
 ## Do NOT Ask About
 
@@ -37,11 +37,11 @@ to test, skip it.
 
 {1-2 sentence overall assessment}
 
-**§{N} {Topic}**
+**{N}. {Topic}**
 1. {Specific question the PM can answer}
 2. {Specific question the PM can answer}
 
-**§{N} {Topic}**
+**{N}. {Topic}**
 3. {Specific question the PM can answer}
 ```
 

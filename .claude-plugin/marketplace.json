@@ -1,8 +1,8 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "pm-skills",
-  "version": "1.0.1",
-  "description": "FRD authoring and review skills for PMs at mvlchain.",
+  "version": "1.1.0",
+  "description": "FRD lifecycle toolkit for PMs at mvlchain — authoring, review, ticket design, and Jira creation.",
   "owner": {
     "name": "mvlchain",
     "email": "dev@mvlchain.io",
@@ -11,7 +11,7 @@
   "plugins": [
     {
       "name": "pm-execution",
-      "description": "FRD authoring (/write-frd) and multi-role FRD review (/review-frd) for the mvlchain PM workflow.",
+      "description": "FRD lifecycle toolkit: /write-frd drafts FRDs; /review-frd runs multi-role review; /design-frd-ticket designs Jira ticket structure; /create-frd-ticket creates Jira issues.",
       "source": "./pm-execution",
       "category": "product-management"
     }

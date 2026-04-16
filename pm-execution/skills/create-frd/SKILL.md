@@ -81,14 +81,14 @@ mapped to the nine FRD sections so every answer has a home.
 
 ### Question Bank (by FRD Section)
 
-**§1 Context & Objectives — Purpose**
+**1. Context & Objectives — Purpose**
 - **Why now?** — What changed recently that makes this the right moment?
 - Advisory: "From a PM perspective, 'why now' usually traces to a metric shift,
   a competitive move, a compliance deadline, or a user-trigger event. Which one
   applies here?"
 - What happens if we *don't* ship this in the next 6 months?
 
-**§1 — KPIs (SMART)**
+**1. — KPIs (SMART)**
 - What single metric, if it moved, would make you say this worked?
 - Advisory: "Teams often conflate leading (conversion rate) and lagging (LTV)
   indicators. Which side do you want to anchor on, and what's the guardrail metric
@@ -96,54 +96,54 @@ mapped to the nine FRD sections so every answer has a home.
 - What are the current values, and what target do you consider *success* vs
   *overperformance*?
 
-**§1 — Scope In/Out**
+**1. — Scope In/Out**
 - What's explicitly **out of scope**, and *why* is it out?
 - Advisory: "When engineers say 'it's just one more week to include X,' does X
   get pulled in, or is the scope boundary load-bearing?"
 
-**§2 Features — Core behavior**
+**2. Features — Core behavior**
 - Walk me through the happy path for the primary user.
 - What are the 2–3 edge cases you're most worried about?
 - Advisory: "A common gap is the 'interrupted state' — what the user sees if they
   close the app mid-flow and return. Has that been decided?"
 
-**§2.+ Data Related Requests (server pre-setup)**
+**2.+ Data Related Requests (server pre-setup)**
 - Does this need new dispatch configs, product types, pricing tables, driver
   application templates, or DB migrations?
 - Advisory: "Skip this section if it's purely UI/logic. Only include items that
   require server data prepared *before* the feature can work."
 
-**§3 Design & UX References**
+**3. Design & UX References**
 - Figma status: ready / in-progress / not started?
 - Advisory: "If Figma isn't ready, leave the link placeholder untouched. Don't
   invent visuals — describe UX *intent* (tone, error states, localization needs)
   that designers can translate."
 - Error, empty, and loading states — any strong opinions on messaging tone?
 
-**§4 Non-Functional Requirements**
+**4. Non-Functional Requirements**
 - Performance: what latency/throughput is acceptable at peak?
 - Security/compliance: PDPA, GDPR, region-specific rules?
 - Availability target (e.g., 99.9% uptime)?
 - Advisory: "Most features inherit the platform defaults. Only call out NFR where
   this feature demands *more* than the platform baseline."
 
-**§5 User Stories & Scenarios**
+**5. User Stories & Scenarios**
 - Beyond the primary user, who else is affected — operations, drivers, CS?
 - Advisory: "Missing secondary actors is the #1 cause of post-launch 'we didn't
   think about that' calls. Who owns the feature when things go wrong?"
 
-**§6 Release Plan**
+**6. Release Plan**
 - MVP boundary — what's the minimum that's still valuable?
 - What's a fast-follow candidate vs a future phase?
 - Advisory: "A good signal of scope creep: Phase 1 deliverables that only make
   sense once Phase 2 ships. Flag those."
 
-**§7 Test Scenarios (QA View)**
+**7. Test Scenarios (QA View)**
 - What's the *worst* acceptable failure mode? (That defines P0 tests.)
 - Advisory: "Format we'll use is Given/When/Then. I'll draft these; you confirm
   priorities."
 
-**§8 RACI Matrix**
+**8. RACI Matrix**
 - Who is **Accountable** (single person) for each major deliverable?
 - Who must be **Consulted** (two-way) vs just **Informed** (one-way)?
 - Advisory: "Default columns are PM, PO, Product Ops, UX/Design, Tech Lead, QA,
@@ -158,21 +158,21 @@ Compose the FRD using the nine sections from Step 0. Rules:
 1. **Match the template exactly** — same section order, same table columns.
 2. **Accessible language** — write for a non-specialist reader. Avoid jargon and
    multi-clause sentences. If a five-year-old couldn't grasp *why* the feature
-   exists from §1, rewrite §1.
+   exists from Section 1, rewrite Section 1.
 3. **Gap markers** — where the interview didn't produce a confident answer, write
    `{TBD — Open Question Q#N}` inline and add the item to the Open Questions
    block at the top of the document.
 4. **Assumptions block** — list every assumption captured during the interview
    at the top of the document, each flagged `⚠ Unvalidated`.
-5. **Data Requests (§2.+)** — include only if the PM explicitly confirmed
+5. **Data Requests (2.+)** — include only if the PM explicitly confirmed
    server-side data setup is required. Otherwise omit the section.
-6. **Test Scenarios (§7)** — draft 3–6 scenarios per feature group covering
+6. **Test Scenarios (Section 7)** — draft 3–6 scenarios per feature group covering
    Happy Path (P0) / Edge Case (P1) / Error Case (P1). Leave `{priority}` for
    PM confirmation if uncertain.
-7. **Design & UX (§3)** — if Figma is not ready, keep the placeholder string
+7. **Design & UX (Section 3)** — if Figma is not ready, keep the placeholder string
    `{Figma Link — paste URL here after design work is finished}` untouched.
-   Populate §3.1 (Design & UX Suggestions) with textual intent only.
-8. **Change Log (§0)** — add the first entry: today's date, PM name, "Initial
+   Populate Section 3.1 (Design & UX Suggestions) with textual intent only.
+8. **Change Log (Section 0)** — add the first entry: today's date, PM name, "Initial
    draft", the trigger that started this FRD.
 
 ---
@@ -189,7 +189,7 @@ After drafting, do not declare the FRD done. Instead:
 3. Offer the next step:
    > - "Want me to get a **multi-role review** from Developer, QA, and Designer
    >   perspectives? (`/review-frd`)"
-4. Iterate the FRD based on the PM's answers. Update §0 Change Log with each
+4. Iterate the FRD based on the PM's answers. Update Section 0 Change Log with each
    revision.
 
 ---
@@ -201,7 +201,7 @@ Save the FRD as a markdown file named `FRD-[feature-slug].md` (kebab-case).
 ## Notes
 
 - Be specific and data-driven — vague FRDs create ambiguous products.
-- Link each design/scope decision back to §1 Purpose and KPIs.
+- Link each design/scope decision back to Section 1 Purpose and KPIs.
 - Flag every assumption — unflagged assumptions become post-launch bugs.
 - A tight FRD is better than a long one. If the draft exceeds what the PM can
   defend in a 30-minute review, cut scope, not clarity.

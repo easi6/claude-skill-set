@@ -37,14 +37,14 @@ Accept the input in any form:
 Invoke the **create-frd** skill to run a structured discovery interview.
 The interview is mapped to the nine FRD sections so every answer has a home:
 
-- §1 Context & Objectives — *Why now? KPIs (SMART). Scope In/Out.*
-- §2 Features — *Happy path, edge cases, server-side data requests.*
-- §3 Design & UX — *Figma status, UX intent, error/empty states.*
-- §4 Non-Functional Requirements — *Performance, security, availability.*
-- §5 User Stories — *Primary and secondary actors.*
-- §6 Release Plan — *MVP boundary, phasing.*
-- §7 Test Scenarios — *Worst acceptable failure = P0.*
-- §8 RACI — *Accountable person per deliverable.*
+- 1. Context & Objectives — *Why now? KPIs (SMART). Scope In/Out.*
+- 2. Features — *Happy path, edge cases, server-side data requests.*
+- 3. Design & UX — *Figma status, UX intent, error/empty states.*
+- 4. Non-Functional Requirements — *Performance, security, availability.*
+- 5. User Stories — *Primary and secondary actors.*
+- 6. Release Plan — *MVP boundary, phasing.*
+- 7. Test Scenarios — *Worst acceptable failure = P0.*
+- 8. RACI — *Accountable person per deliverable.*
 
 Interview rules the skill follows:
 - 2–3 questions per turn (never a question dump)
@@ -90,6 +90,6 @@ Save the FRD as `FRD-[feature-slug].md`.
   90 days of launch" is good.
 - Open Questions should be genuinely unresolved — don't list things the PM can
   answer from context.
-- If the user provides research, weave insights into §1 Context with attribution.
-- If Figma isn't ready, leave the §3 Figma placeholder untouched — never invent
+- If the user provides research, weave insights into Section 1 Context with attribution.
+- If Figma isn't ready, leave the Section 3 Figma placeholder untouched — never invent
   visuals.

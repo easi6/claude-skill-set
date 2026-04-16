@@ -39,11 +39,11 @@ the answer, skip it.
 
 {1-2 sentence overall assessment}
 
-**§{N} {Topic}**
+**{N}. {Topic}**
 1. {Specific question the PM can answer}
 2. {Specific question the PM can answer}
 
-**§{N} {Topic}**
+**{N}. {Topic}**
 3. {Specific question the PM can answer}
 ```
 

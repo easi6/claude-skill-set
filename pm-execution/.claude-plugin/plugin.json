@@ -1,7 +1,7 @@
 {
   "name": "pm-execution",
-  "version": "1.0.1",
-  "description": "FRD authoring and review for the mvlchain PM workflow: /write-frd drives an interview-driven draft against the mvlchain 9-section FRD template; /review-frd runs a multi-role (Developer/QA/Designer) review.",
+  "version": "1.1.0",
+  "description": "FRD lifecycle toolkit for the mvlchain PM workflow: /write-frd drafts FRDs via interview; /review-frd runs multi-role review; /design-frd-ticket designs Jira ticket structure from FRD; /create-frd-ticket creates Jira issues from the designed tickets.",
   "author": {
     "name": "mvlchain",
     "email": "dev@mvlchain.io",

@@ -44,7 +44,7 @@ Each role produces a compact review:
 
 {1-2 sentence overall assessment}
 
-**§{N} {Topic}**
+**{N}. {Topic}**
 1. {Specific question the PM can answer}
 2. {Specific question the PM can answer}
 ```
