@@ -1,7 +1,7 @@
 # Claude Skill Set — mvlchain FRD Toolkit
 
-Minimal Claude Code skill set built for the mvlchain PM workflow. One plugin,
-two skills, one command — focused on **authoring and reviewing FRDs**.
+FRD lifecycle toolkit for the mvlchain PM workflow — authoring, review, ticket
+design, and Jira creation.
 
 ## What's inside
 
@@ -13,19 +13,27 @@ two skills, one command — focused on **authoring and reviewing FRDs**.
 - **`/review-frd`** — Multi-role review of an FRD from Developer, QA, and
   Designer perspectives. Surfaces only questions the PM can answer — no
   implementation-detail asks.
-
-That's the whole toolkit. Other PM skills (discovery, strategy, GTM, etc.) were
-intentionally removed — this repo targets a specific workflow, not general PM
-work.
+- **`/design-frd-ticket`** — Design Jira ticket structure (Epic/Story/Dev-Task)
+  from an FRD. Analyzes scope, confirms Epic necessity and target platforms with
+  the PM, then collaborates on ticket breakdown and appends the finalized tree
+  to FRD Section 9 (Tasks).
+- **`/create-frd-ticket`** — Create Jira issues from an FRD's ticket structure.
+  Parses Section 9, previews all issues before creation, creates them in the DHL
+  project with proper Epic/Story/Dev-Task linking, then updates the FRD with
+  Jira issue links.
 
 ## Workflow
 
 ```
 [Biz/Ops request]
      ↓
-  /write-frd           →  interview PM → draft FRD (Notion 9-section template)
+  /write-frd              →  interview PM → draft FRD (Notion 9-section template)
      ↓
-  /review-frd        →  Dev / QA / Designer questions
+  /review-frd             →  Dev / QA / Designer questions
+     ↓
+  /design-frd-ticket      →  ticket tree in FRD Section 9
+     ↓
+  /create-frd-ticket      →  Jira issues created + FRD updated with links
 ```
 
 ## Installation
@@ -58,10 +66,10 @@ cp -r pm-execution/skills/* .opencode/skills/
 
 ## Dependencies
 
-- **Notion MCP** — `/write-frd` and `/review-frd` both call `notion-fetch`
-  to load the mvlchain FRD template. The Notion plugin must be connected.
-- **Atlassian MCP** (optional) — `/review-frd` can accept Jira links via
-  `getJiraIssue`.
+- **Notion MCP** — `/write-frd`, `/review-frd`, `/design-frd-ticket`, and
+  `/create-frd-ticket` use `notion-fetch` to load and update FRD pages.
+- **Atlassian MCP** — `/review-frd` accepts Jira links via `getJiraIssue`.
+  `/create-frd-ticket` creates issues via `createJiraIssue` in the DHL project.
 
 ## Contributing
 
