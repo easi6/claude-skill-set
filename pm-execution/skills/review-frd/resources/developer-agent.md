@@ -34,17 +34,11 @@ the answer, skip it.
 
 ## Output Format
 
-```markdown
-# Developer Review
+Return a flat numbered list. Each item: the question + which FRD section it relates to.
 
-{1-2 sentence overall assessment}
-
-**{N}. {Topic}**
-1. {Specific question the PM can answer}
-2. {Specific question the PM can answer}
-
-**{N}. {Topic}**
-3. {Specific question the PM can answer}
+```
+1. {Specific question} — Section {N}
+2. {Specific question} — Section {N}
 ```
 
-Keep it short. Every question should make the PM think "oh, I need to clarify that."
+3-8 questions. No headings, no grouping, no overall assessment.

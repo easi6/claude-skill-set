@@ -75,48 +75,48 @@ parallel review. Pass the FRD content and template as context.
 
 ---
 
-## Step 4: Output Format
+## Step 4: Collect Role Results (Internal)
 
-Each role produces a compact review. No severity labels, no tables — just a clean
-numbered list of questions grouped by topic.
+Each role agent returns its review result to the main agent. These are **internal
+intermediate results — do NOT show them to the PM directly.**
 
-```markdown
-# {Role} Review
-
-{1-2 sentence overall assessment}
-
-**{N}. {Topic}**
-1. {Specific question the PM can answer}
-2. {Specific question the PM can answer}
-
-**{N}. {Topic}**
-3. {Specific question the PM can answer}
-```
-
-Keep it short. 3-8 questions per role. Every question should make the PM think
-"oh, I need to clarify that" — not "that's obvious" and not "I can't answer that."
+Each role produces 3-8 questions in a numbered list grouped by topic. The main agent
+collects all role results and proceeds to Step 5.
 
 ---
 
-## Step 5: Consolidated Summary
+## Step 5: Deduplicate & Present
 
-After all role reviews, produce one summary:
+After collecting all role results, **deduplicate, merge, and present a single
+consolidated review** to the PM. This is the **only output the PM sees**.
+
+### Deduplication Rules
+
+1. **Same root cause = merge.** If two or more roles flagged questions that trace back
+   to the same FRD gap (e.g., Developer asks "what happens when X?" and QA asks
+   "how do I test the X case?"), merge into a single item.
+2. **Pick the most specific form.** When merging, keep the question that references
+   a concrete section, threshold, or scenario — discard the vaguer version.
+3. **Tag all contributing roles.** After merging, note which roles raised it
+   (e.g., `— Developer, QA`).
+4. **Unique perspectives stay separate.** Only merge when the underlying FRD gap is
+   the same. Two questions about the same feature but asking about genuinely different
+   gaps (e.g., missing business rule vs. missing user flow) remain separate items.
+
+### Output Format
 
 ```markdown
-# FRD Review Summary: {Title}
+# FRD Review: {Title}
 
 ## Template Completeness
 {List any major sections from the FRD template that are missing or incomplete}
 
-## Cross-Role Issues
-{Issues flagged by 2+ roles, with the different perspectives noted}
-
 ## Questions for PM
-1. {Most impactful question} — from {role(s)}
-2. {Second most impactful} — from {role(s)}
+1. {Most impactful question} — {role(s)}
+2. {Second most impactful} — {role(s)}
 ...
 ```
 
-The consolidated question list should be **deduplicated and prioritized**. If Developer
-and QA both flagged the same overlapping threshold, merge into one item. Total
-consolidated questions should typically be 5-15.
+Total consolidated questions should typically be 5-15. Every question should make
+the PM think "oh, I need to clarify that" — not "that's obvious" and not
+"I can't answer that."
