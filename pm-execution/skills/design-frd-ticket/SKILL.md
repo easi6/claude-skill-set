@@ -168,7 +168,9 @@ After presenting the proposal, enter free-form conversation with the PM.
 
 ### Finalization
 
-When the PM confirms the structure is final, proceed to Step 5.
+After presenting the updated tree, use `AskUserQuestion` to confirm:
+- **Finalize** — proceed to append to FRD
+- **Continue editing** — another round of refinement
 
 ---
 

@@ -54,8 +54,10 @@ Confirm what the PM has already prepared:
    Use web search sparingly when market or competitive context is needed.
 2. Summarize your understanding in 2–3 sentences:
    > "Before I ask questions — my read is: *{one-sentence feature}* aimed at
-   > *{who}* to solve *{problem}*. Success looks like *{metric}*. Correct?"
-3. Wait for confirmation or correction before proceeding.
+   > *{who}* to solve *{problem}*. Success looks like *{metric}*."
+3. Use `AskUserQuestion` to confirm:
+   - **Correct** — proceed to discovery interview
+   - **Not quite** — let the PM clarify before proceeding
 
 ---
 

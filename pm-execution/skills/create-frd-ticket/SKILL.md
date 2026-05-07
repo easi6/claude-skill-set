@@ -96,8 +96,9 @@ Before creating any issues, present a preview to the PM.
 ==================================================
 ```
 
-Ask the PM to confirm:
-> "Proceed with creating these {N} issues in Jira?"
+Use `AskUserQuestion` to confirm:
+- **Yes, create {N} issues** — proceed to Jira creation
+- **No, cancel** — abort without creating any issues
 
 **Do NOT create any issues until the PM confirms.**
 
