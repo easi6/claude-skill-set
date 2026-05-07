@@ -56,14 +56,17 @@ may vary between FRDs — match by the leading number, not the title):
 - **Section 1** (e.g., "Context & Objectives", "Background & Objectives") — Purpose, KPIs, Scope
 - **Section 6** (e.g., "Release Plan") — Phases, timeline, milestones
 
+**Preserve the original markdown formatting** (headings, lists, bold, tables, etc.)
+from the FRD source. Do NOT flatten to plain text.
+
 This combined content is the "What section" used for Epic and Story descriptions.
 
 ### Description Mapping
 
 | Issue Type | Description |
 |-----------|-------------|
-| Epic | What section content |
-| Story | What section content |
+| Epic | What section content (markdown) |
+| Story | What section content (markdown) |
 | Dev-Task | `Please check the story ticket.` |
 
 ---
@@ -121,8 +124,9 @@ Use the Atlassian MCP tools to create issues in the following order:
 | Project | DHL | DHL | DHL |
 | Issue Type | Epic | Story | Dev-Task |
 | Summary | `Feature Name` | `[platform] Title` | `[platform] Title` |
-| Description | What section | What section | `Please check the story ticket.` |
+| Description | What section (markdown) | What section (markdown) | `Please check the story ticket.` |
 | Priority | Medium | Medium | Medium |
+| contentFormat | `markdown` | `markdown` | `markdown` |
 
 ### Jira Configuration
 
