@@ -108,7 +108,8 @@ Based on the FRD content and confirmed parameters, propose an initial ticket tre
   - Good: `Restrict voucher application on guaranteed fare routes`
 - **Story summary**: Use the FRD title or feature name directly when possible.
   Do NOT rewrite into a technical description.
-- **Dev-Task summary**: Describe the platform-specific work scope in business terms.
+- **Dev-Task summary**: Use the same summary as the parent Story. Only the
+  `[platform]` prefix differs — the summary text itself must be identical.
 
 #### Summary Prefix
 - `[platform]` for Dev-Task (always) and Story (only when Epic exists).
@@ -139,15 +140,15 @@ Present the tree using bullet list + indent:
 ```
 - [Epic] Feature Name
   - [Story] [server] Short business description
-    - [Dev-Task] [server] Specific task description
-    - [Dev-Task] [server] Another task
+    - [Dev-Task] [server] Short business description
+    - [Dev-Task] [server] Short business description
   - [Story] [web-admin] Short business description
   - [Story] [app-all-rider] Short business description
     - TBD: Scope for social login pending
 
-- [Story] [server] Standalone story (no Epic case)
-  - [Dev-Task] [server] Task description
-  - [Dev-Task] [web-all] Task description
+- [Story] Standalone story (no Epic case)
+  - [Dev-Task] [server] Standalone story (no Epic case)
+  - [Dev-Task] [web-all] Standalone story (no Epic case)
 ```
 
 ---
