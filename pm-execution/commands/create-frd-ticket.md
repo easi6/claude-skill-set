@@ -1,14 +1,12 @@
 ---
-description: Create Jira issues (Epic/Story/Dev-Task) from an FRD's ticket structure in section 9, with preview before creation and automatic FRD update with issue links
-argument-hint: "<Notion FRD Link or file path with existing ticket section>"
+description: Design and create Jira tickets (Epic/Story/Dev-Task) from an FRD — analyzes scope, confirms platforms, collaborates on breakdown, creates issues in Jira, updates FRD with links
+argument-hint: "<Notion FRD Link or file path>"
 ---
 
-# /create-frd-ticket — Create Jira Issues from FRD
+# /create-frd-ticket — Create Jira Tickets from FRD
 
-Parse the ticket tree from FRD section 9 (Tasks), preview the issues, create them
-in Jira (DHL project), and update the FRD with issue links.
-
-**Prerequisite**: Run `/design-frd-ticket` first to design the ticket structure.
+Analyze an FRD, collaboratively design a Jira ticket structure with the PM, create
+all issues in Jira (DHL project), and update the FRD with issue links.
 
 ## Invocation
 
@@ -19,68 +17,58 @@ in Jira (DHL project), and update the FRD with issue links.
 
 ## Workflow
 
-### Step 1: Load & Parse
+### Step 1: Load & Analyze FRD
 
-Reads the FRD and parses section 9 (Tasks) to extract:
-- Issue hierarchy: Epic > Story > Dev-Task
-- Platform prefixes: `[server]`, `[web-admin]`, `[app-ios-rider]`, etc.
-- TBD items (skipped, not created)
+Reads the FRD and determines:
+- **Epic necessity** — recommends Epic for multi-phase, cross-platform, or large features
+- **Target platforms** — infers from FRD content (features, user stories, design refs)
 
-### Step 2: Preview
+### Step 2: Confirm with PM
 
-Shows a summary of all issues to be created before touching Jira:
+Two AskUserQuestion prompts:
+1. Epic necessity (AI default provided with rationale)
+2. Target platforms (AI-inferred defaults, multi-select)
 
-```
-==================================================
-  Jira Issue Creation Preview
-==================================================
-  Project: DHL | Priority: Medium (all)
---------------------------------------------------
-  [Epic] Feature Name
-    [Story] [server] Business description
-      [Dev-Task] [server] Task description
-    [Story] [web-admin] Business description
+### Step 3: Propose & Collaborate
 
-  Skipped (TBD):
+AI proposes an initial ticket tree, then enters free-form conversation:
+
+```markdown
+- [Epic] Feature Name
+  - [Story] [server] Enable user authentication for login flow
+    - [Dev-Task] [server] Enable user authentication for login flow
+  - [Story] [web-admin] Manage user access permissions
+  - [Story] [app-all-rider] Add login screen for riders
     - TBD: Social login scope pending
-
-  Total: 1 Epic, 2 Stories, 1 Dev-Task = 4 issues
-==================================================
 ```
 
-Waits for PM confirmation before proceeding.
+The PM directs: merge, split, remove, add, reorder tickets until satisfied.
 
-### Step 3: Create in Jira
+### Step 4: Preview & Create in Jira
 
-Creates issues in order: Epic -> Story (linked to Epic) -> Dev-Task (linked to Story).
-
-Jira fields:
+Shows a summary preview, confirms with PM, then creates issues in order:
+Epic → Story (linked to Epic) → Dev-Task (linked to Story).
 
 | Field | Epic | Story | Dev-Task |
 |-------|------|-------|----------|
 | Project | DHL | DHL | DHL |
 | Summary | Feature Name | [platform] Title | [platform] Title |
-| Description | Section 1 + 6 content | Section 1 + 6 content | `Please check the story ticket.` |
+| Description | Section 1 + 6 (markdown) | Section 1 + 6 (markdown) | `Please check the story ticket.` |
 | Priority | Medium | Medium | Medium |
 
-### Step 4: Update FRD
+### Step 5: Update FRD
 
 Replaces ticket entries in section 9 with Jira issue links:
 
-**Before:**
-```markdown
-- [Story] [server] Enable authentication
-```
-
-**After:**
 ```markdown
 - [DHL-25460](https://mvlchain.atlassian.net/browse/DHL-25460) [server] Enable authentication
 ```
 
 TBD items remain unchanged.
 
-## Notes
+## Ticket Rules
 
-- Requires `/design-frd-ticket` to have been run first (section 9 must exist).
-- TBD items are never created — they stay as placeholders for future FRD updates.
-- If any issue creation fails, successfully created issues are still linked in the FRD.
+- **Summaries**: English, non-technical, business/user-facing tone
+- **Dev-Task summary**: Same as parent Story summary
+- **Dev-Task**: Optional — PM decides granularity
+- **TBD**: Marks unfinalized scope, not created as Jira issues
