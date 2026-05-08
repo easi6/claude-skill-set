@@ -1,6 +1,6 @@
 {
   "name": "pm-execution",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "FRD lifecycle toolkit for the mvlchain PM workflow: /write-frd drafts FRDs via interview; /review-frd runs multi-role review; /create-frd-ticket designs and creates Jira tickets from FRD.",
   "author": {
     "name": "mvlchain",
